@@ -28,7 +28,7 @@ vector<int> kmp(const string& str, const string& pattern) {
         if(pattern[ps] == str[i]) ps++;
         if(ps == m) {
             matches.push_back(i - m + 1);
-            ps = 0;
+            ps = t[ps - 1];
         }
     }
 
