@@ -15,7 +15,7 @@ vector<int> kmp(const string& str, const string& pattern) {
     t[0] = ps;
 
     for(int i = 1; i < m; i++) {
-        while(ps > 0; pattern[ps] != pattern[i]) ps = t[ps - 1];
+        while(ps > 0 && pattern[ps] != pattern[i]) ps = t[ps - 1];
         if(pattern[ps] == pattern[i]) ps++;
         t[i] = ps;
     }
@@ -24,7 +24,7 @@ vector<int> kmp(const string& str, const string& pattern) {
     ps = 0;
 
     for(int i = 0; i < n; i++) {
-        while(ps > 0; pattern[ps] != str[i]) ps = t[ps - 1];
+        while(ps > 0 && pattern[ps] != str[i]) ps = t[ps - 1];
         if(pattern[ps] == str[i]) ps++;
         if(ps == m) {
             matches.push_back(i - m + 1);
@@ -34,6 +34,7 @@ vector<int> kmp(const string& str, const string& pattern) {
 
     return matches;
 }
+
 
 int main() {
     string str, pat;
@@ -49,6 +50,7 @@ int main() {
     for(int m: matches) {
         for(; pos < m; pos++) cout << ' ';
         cout << '^';
+        pos++;
     }
     cout << endl;
 }
