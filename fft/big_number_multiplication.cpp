@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////
-// Multiplication of long numbersf using Fast Fourier Transform //
+// Multiplication of long numbers using Fast Fourier Transform //
 // Author: Adam Bac					        //
 // 							        //
 // Takes two non-negative integers from the standard input      //
@@ -77,9 +77,6 @@ cd p1[MAX_LEN], p2[MAX_LEN];
 
 
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-
     int n1 = read(p1);
     int n2 = read(p2);
 
